@@ -71,7 +71,7 @@ public class BankAccount {
 
 	public void withdraw(double amount) {
 		if (_interest > 0.01) {
-			throw new InsufficientFundsException("Interest is grater than 1%, so withdraw is forbidden.");
+			throw new InsufficientFundsException("Interest is grater than  1%, so withdraw is forbidden.");
 		}
 		if (_balance < amount) {
 			throw new InsufficientFundsException("Balance is less than the requested amount.");
@@ -83,7 +83,7 @@ public class BankAccount {
 
 	public void transfer(double amount, BankAccount otherAccount) {
 		if (otherAccount == null) {
-			throw new NonExistingBankAccountException("Bank account to transfer is invalid.");
+			throw new NonExistingBankAccountException("Bank account  transfer is invalid.");
 		}
 		try {
 			withdraw(amount);
@@ -101,7 +101,7 @@ public class BankAccount {
 		}
 	}
 
-	public double calculateAmount(int months) {
+	public double calculateAmount(int months) { 
 		double newBalance = _balance;
 		if (_complexInterest) {
 			for (int i = 0; i < months; i++) {
